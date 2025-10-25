@@ -1,0 +1,5 @@
+{
+  "name": "Otokodesu Anime Viewer",
+  "description": "A modern, fast, and visually appealing web application for browsing and discovering ongoing and completed anime series. Built with React and Tailwind CSS, it offers a seamless user experience for anime enthusiasts.",
+  "requestFramePermissions": []
+}
