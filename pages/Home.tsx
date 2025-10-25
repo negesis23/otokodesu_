@@ -14,7 +14,7 @@ const Home: React.FC = () => {
   return (
     <div className="space-y-16 py-10">
       <section className="px-5 text-center">
-        <h1 className="text-5xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-focus">Otokonime</h1>
+        <h1 className="text-5xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-focus">Otokodesu</h1>
         <p className="text-lg text-text/70 mb-6">Your Ultimate Anime Hub</p>
         <SearchForm />
       </section>
