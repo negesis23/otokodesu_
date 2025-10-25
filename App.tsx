@@ -1,6 +1,6 @@
 
 import React, { useEffect } from 'react';
-import { MemoryRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Ongoing from './pages/Ongoing';
@@ -23,7 +23,7 @@ const ScrollToTop = () => {
 
 const App: React.FC = () => {
   return (
-    <MemoryRouter>
+    <BrowserRouter>
       <ScrollToTop />
       <Layout>
         <Routes>
@@ -37,7 +37,7 @@ const App: React.FC = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
-    </MemoryRouter>
+    </BrowserRouter>
   );
 };
 
