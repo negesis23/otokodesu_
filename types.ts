@@ -1,4 +1,5 @@
 
+
 export interface Pagination {
   current_page: number;
   last_visible_page: number;
@@ -118,4 +119,15 @@ export interface AnimeByGenre extends AnimeBase {
 export interface AnimeByGenreResponse {
     anime: AnimeByGenre[];
     pagination: Pagination;
+}
+
+export interface ScheduleAnime {
+  title: string;
+  slug: string;
+  otakudesu_url: string;
+}
+
+export interface ScheduleDay {
+  day: string;
+  animeList: ScheduleAnime[];
 }

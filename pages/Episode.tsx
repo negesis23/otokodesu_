@@ -178,7 +178,7 @@ const Episode: React.FC = () => {
                     
                     {/* Episode Playlist */}
                     <div className="lg:col-span-1">
-                        <div className="bg-surface-container border border-outline-variant/30 rounded-2xl h-[80vh] flex flex-col">
+                        <div className="bg-surface-container border border-outline-variant/30 rounded-2xl max-h-[60vh] lg:h-auto flex flex-col">
                             <h3 className="text-xl font-bold p-4 border-b border-outline-variant/30 flex-shrink-0 text-on-surface">Episode List</h3>
                             <div className="overflow-y-auto p-2">
                             {animeData?.episode_lists?.map((ep: EpisodeInfo) => (

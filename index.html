@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Otokonime - Your Anime Hub</title>
+  <title>Otokodesu - Your Anime Hub</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -48,57 +48,55 @@
   </script>
   <style>
     :root {
-      --color-primary: 71 93 146;
+      --color-primary: 68 94 145;
       --color-on-primary: 255 255 255;
-      --color-primary-container: 217 226 255;
-      --color-on-primary-container: 47 69 120;
-      --color-secondary: 144 74 65;
+      --color-primary-container: 216 226 255;
+      --color-on-primary-container: 43 70 120;
+      --color-secondary: 87 94 113;
       --color-on-secondary: 255 255 255;
-      --color-secondary-container: 255 218 213;
-      --color-on-secondary-container: 115 52 44;
-      --color-background: 250 248 255;
-      --color-on-background: 26 27 33;
-      --color-surface: 250 248 255;
-      --color-on-surface: 26 27 33;
+      --color-secondary-container: 219 226 249;
+      --color-on-secondary-container: 63 71 89;
+      --color-background: 249 249 255;
+      --color-on-background: 26 27 32;
+      --color-surface: 249 249 255;
+      --color-on-surface: 26 27 32;
       --color-surface-variant: 225 226 236;
-      --color-on-surface-variant: 68 70 79;
+      --color-on-surface-variant: 68 71 79;
       --color-surface-container-lowest: 255 255 255;
-      --color-surface-container-low: 244 243 250;
-      --color-surface-container: 238 237 244;
-      --color-surface-container-high: 232 231 239;
+      --color-surface-container-low: 243 243 250;
+      --color-surface-container: 237 237 244;
+      --color-surface-container-high: 232 231 238;
       --color-surface-container-highest: 226 226 233;
-      --color-outline: 117 119 128;
-      --color-outline-variant: 197 198 208;
+      --color-outline: 116 119 127;
+      --color-outline-variant: 196 198 208;
     }
     html.dark {
-      --color-primary: 177 197 255;
-      --color-on-primary: 22 46 96;
-      --color-primary-container: 47 69 120;
-      --color-on-primary-container: 217 226 255;
-      --color-secondary: 255 180 169;
-      --color-on-secondary: 86 30 23;
-      --color-secondary-container: 115 52 44;
-      --color-on-secondary-container: 255 218 213;
-      --color-background: 18 19 24;
+      --color-primary: 173 198 255;
+      --color-on-primary: 16 47 96;
+      --color-primary-container: 43 70 120;
+      --color-on-primary-container: 216 226 255;
+      --color-secondary: 191 198 220;
+      --color-on-secondary: 41 48 65;
+      --color-secondary-container: 63 71 89;
+      --color-on-secondary-container: 219 226 249;
+      --color-background: 17 19 24;
       --color-on-background: 226 226 233;
-      --color-surface: 18 19 24;
+      --color-surface: 17 19 24;
       --color-on-surface: 226 226 233;
-      --color-surface-variant: 68 70 79;
-      --color-on-surface-variant: 197 198 208;
+      --color-surface-variant: 68 71 79;
+      --color-on-surface-variant: 196 198 208;
       --color-surface-container-lowest: 12 14 19;
-      --color-surface-container-low: 26 27 33;
+      --color-surface-container-low: 26 27 32;
       --color-surface-container: 30 31 37;
       --color-surface-container-high: 40 42 47;
-      --color-surface-container-highest: 51 52 58;
-      --color-outline: 143 144 153;
-      --color-outline-variant: 68 70 79;
+      --color-surface-container-highest: 51 53 58;
+      --color-outline: 142 144 153;
+      --color-outline-variant: 68 71 79;
     }
     @keyframes bg-anim-dark {
-        0%   { transform: translate(0, 0) scale(1); }
-        25%  { transform: translate(10vw, -15vh) scale(1.2); }
-        50%  { transform: translate(-10vw, 15vh) scale(0.8); }
-        75%  { transform: translate(15vw, 5vh) scale(1.1); }
-        100% { transform: translate(0, 0) scale(1); }
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
     body {
         -webkit-font-smoothing: antialiased;
@@ -106,7 +104,7 @@
         background-color: rgb(var(--color-background));
         color: rgb(var(--color-on-background));
         transition: background-color 0.3s ease, color 0.3s ease;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23e1e2ec' fill-opacity='0.15'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9z'/%3E%3Cpath d='M6 6h4v4H6V6zm10 0h4v4h-4V6zm10 0h4v4h-4V6zm10 0h4v4h-4V6zm10 0h4v4h-4V6zm10 0h4v4h-4V6zm10 0h4v4h-4V6zm10 0h4v4h-4V6zM6 16h4v4H6v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zM6 26h4v4H6v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zM6 36h4v4H6v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zM6 46h4v4H6v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zM6 56h4v4H6v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zM6 66h4v4H6v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zM6 76h4v4H6v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zM6 86h4v4H6v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4zm10 0h4v4h-4v-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C4C6D0' fill-opacity='0.08'%3E%3Cpath d='M80 0v80H0V0h80zM40 0v80zM0 40h80z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
     html.dark body::before {
         content: '';
@@ -115,11 +113,10 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        background: radial-gradient(ellipse 60% 80% at 50% -20%,rgba(var(--color-primary),0.3), transparent),
-                    radial-gradient(ellipse 80% 50% at 90% 40%,rgba(var(--color-secondary),0.25), transparent),
-                    radial-gradient(ellipse 80% 80% at 10% 80%,rgba(var(--color-primary),0.25), transparent);
+        background: linear-gradient(300deg, rgba(var(--color-primary), 0.15), rgba(var(--color-secondary), 0.15), rgba(var(--color-primary), 0.1));
+        background-size: 400% 400%;
         z-index: -1;
-        animation: bg-anim-dark 20s ease-in-out infinite;
+        animation: bg-anim-dark 30s ease-in-out infinite;
         opacity: 0;
         transition: opacity 0.5s;
     }

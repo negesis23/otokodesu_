@@ -10,6 +10,7 @@ import AnimeDetail from './pages/AnimeDetail';
 import Episode from './pages/Episode';
 import Genre from './pages/Genre';
 import NotFound from './pages/NotFound';
+import Schedule from './pages/Schedule';
 
 const App: React.FC = () => {
   const location = useLocation();
@@ -23,6 +24,7 @@ const App: React.FC = () => {
           <Route path="/completed/:page?" element={<Completed />} />
           <Route path="/search/:query" element={<Search />} />
           <Route path="/genre/:slug/:page?" element={<Genre />} />
+          <Route path="/schedule" element={<Schedule />} />
           <Route path="/anime/:slug" element={<AnimeDetail />} />
           <Route path="/episode/:slug" element={<Episode />} />
           <Route path="*" element={<NotFound />} />

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useApiAuto } from '../hooks/useApi';
@@ -8,10 +8,26 @@ import ChevronDownIcon from './icons/ChevronDownIcon';
 const GenreDropdown: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     const { data: genres, loading } = useApiAuto(getGenres);
+    const dropdownRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+                setIsOpen(false);
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
 
     return (
-        <div className="relative" onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)}>
-            <button className="font-medium transition-colors relative px-4 py-2 rounded-full text-sm text-on-surface-variant hover:text-on-surface flex items-center gap-1">
+        <div className="relative" ref={dropdownRef}>
+            <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="font-medium transition-colors relative px-4 py-2 rounded-full text-sm text-on-surface-variant hover:text-on-surface flex items-center gap-1 w-full justify-start lg:w-auto lg:justify-center lg:p-4 text-lg lg:text-sm rounded-lg lg:rounded-full"
+            >
                 <span>Genres</span>
                 <ChevronDownIcon className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
             </button>
@@ -22,7 +38,7 @@ const GenreDropdown: React.FC = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute top-full left-0 mt-2 w-80 bg-surface-container-high rounded-xl shadow-lg p-2 border border-outline-variant/30"
+                        className="absolute top-full left-0 mt-2 w-80 bg-surface-container-high rounded-xl shadow-lg p-2 border border-outline-variant/30 z-20"
                     >
                         {loading ? (
                             <div className="p-2 text-center text-on-surface-variant">Loading...</div>

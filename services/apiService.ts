@@ -1,6 +1,7 @@
 
+
 import { API_BASE_URL } from '../constants';
-import type { HomeData, Genre, OngoingAnime, Pagination, CompleteAnime, AnimeDetailData, SearchResult, EpisodeData, AnimeByGenreResponse } from '../types';
+import type { HomeData, Genre, OngoingAnime, Pagination, CompleteAnime, AnimeDetailData, SearchResult, EpisodeData, AnimeByGenreResponse, ScheduleDay } from '../types';
 
 async function apiFetch<T>(endpoint: string): Promise<T> {
   const response = await fetch(`${API_BASE_URL}${endpoint}`);
@@ -33,3 +34,5 @@ export const getEpisode = (slug: string): Promise<EpisodeData> => apiFetch<Episo
 
 export const getAnimeByGenre = (slug: string, page: number = 1): Promise<AnimeByGenreResponse> => 
   apiFetch<AnimeByGenreResponse>(`/genres/${slug}/${page}`);
+  
+export const getSchedule = (): Promise<ScheduleDay[]> => apiFetch<ScheduleDay[]>('/jadwal-rilis');
