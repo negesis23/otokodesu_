@@ -24,13 +24,19 @@ const Pagination: React.FC<PaginationProps> = ({ pagination, basePath }) => {
     return null;
   }
 
+  const baseClasses = "relative inline-flex items-center capitalize justify-center font-medium rounded-full focus:outline-none transition-all duration-300";
+  const sizeClasses = "w-10 h-10 md:w-12 md:h-12";
+  const iconSizeClasses = "w-10 h-10 md:w-12 md:h-12";
+  const interactiveClasses = "bg-surface-container text-on-surface-container hover:bg-surface-container-high";
+  const activeClasses = "bg-gradient-to-br from-primary to-secondary text-on-primary shadow-lg shadow-primary/20";
+
   return (
     <ul className="flex flex-row items-center justify-center gap-2 md:gap-3 w-full">
       {pagination.has_previous_page && (
         <li>
           <Link 
             to={`${basePath}/${pagination.previous_page}`} 
-            className="inline-flex items-center capitalize justify-center p-3 font-medium rounded-full focus:outline-none bg-surface text-text transition hover:text-primary"
+            className={`${baseClasses} ${iconSizeClasses} ${interactiveClasses}`}
             aria-label="Go to previous page"
           >
             <ChevronLeftIcon />
@@ -40,19 +46,17 @@ const Pagination: React.FC<PaginationProps> = ({ pagination, basePath }) => {
       
       {paginationRange.map((pageNumber, index) => {
         if (pageNumber === DOTS) {
-          return <li key={`${DOTS}-${index}`} className="flex items-center justify-center w-10 h-10 text-text/50">...</li>;
+          return <li key={`${DOTS}-${index}`} className="flex items-center justify-center w-10 h-10 text-on-surface-variant">...</li>;
         }
+
+        const isActive = currentPage === pageNumber;
 
         return (
           <li key={pageNumber}>
               <Link 
                   to={`${basePath}/${pageNumber}`} 
-                  className={`inline-flex items-center capitalize justify-center w-10 h-10 md:w-12 md:h-12 font-medium rounded-full focus:outline-none transition ${
-                      currentPage === pageNumber 
-                      ? 'bg-primary text-primary-content hover:bg-primary-focus' 
-                      : 'bg-surface text-text hover:text-primary'
-                  }`}
-                  aria-current={currentPage === pageNumber ? 'page' : undefined}
+                  className={`${baseClasses} ${sizeClasses} ${isActive ? activeClasses : interactiveClasses}`}
+                  aria-current={isActive ? 'page' : undefined}
               >
                   {pageNumber}
               </Link>
@@ -64,7 +68,7 @@ const Pagination: React.FC<PaginationProps> = ({ pagination, basePath }) => {
         <li>
           <Link 
             to={`${basePath}/${pagination.next_page}`} 
-            className="inline-flex items-center capitalize justify-center p-3 font-medium rounded-full focus:outline-none bg-surface text-text transition hover:text-primary"
+            className={`${baseClasses} ${iconSizeClasses} ${interactiveClasses}`}
             aria-label="Go to next page"
           >
             <ChevronRightIcon />

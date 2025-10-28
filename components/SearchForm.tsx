@@ -1,4 +1,3 @@
-
 import React, { useState, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SearchIcon from './icons/SearchIcon';
@@ -19,23 +18,20 @@ const SearchForm: React.FC<SearchFormProps> = ({ initialQuery = '' }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full flex items-center gap-3.5">
-      <div className="relative flex-1 w-full">
-          <span className="absolute inset-y-0 left-0 flex items-center pl-5 pointer-events-none">
-            <SearchIcon className="w-5 h-5 text-text/50" />
+    <form onSubmit={handleSubmit} className="w-full max-w-md">
+      <div className="relative">
+          <span className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
+            <SearchIcon className="w-5 h-5 text-on-surface-variant" />
           </span>
           <input
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search for an anime..."
-            className="outline-none bg-surface placeholder-text/50 rounded-full py-3 px-5 pl-12 w-full focus:ring-2 focus:ring-primary/50"
+            placeholder="Search anime..."
+            className="outline-none bg-surface-container-high placeholder-on-surface-variant rounded-full py-2.5 px-4 pl-11 w-full border border-transparent focus:ring-2 focus:ring-primary/80 transition"
             required
           />
       </div>
-      <button type="submit" className="inline-flex items-center capitalize justify-center px-5 py-3 font-medium rounded-full focus:outline-none bg-primary text-primary-content transition hover:bg-primary-focus flex-none">
-        Search
-      </button>
     </form>
   );
 };

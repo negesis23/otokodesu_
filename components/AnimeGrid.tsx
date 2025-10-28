@@ -12,23 +12,23 @@ interface AnimeGridProps {
 
 const SkeletonCard: React.FC = () => (
     <div className="flex flex-col gap-3 animate-pulse w-full h-full">
-        <div className="bg-surface w-full h-full rounded-3xl aspect-9/12"></div>
-        <div className="bg-surface w-full h-5 rounded-lg"></div>
-        <div className="bg-surface w-1/2 h-5 rounded-lg"></div>
+        <div className="bg-surface-container w-full h-full rounded-xl aspect-9/12"></div>
+        <div className="bg-surface-container w-full h-4 rounded-lg"></div>
+        <div className="bg-surface-container w-1/2 h-4 rounded-lg"></div>
     </div>
 );
 
 const AnimeGrid: React.FC<AnimeGridProps> = ({ animes, loading, skeletonCount = 12 }) => {
     if (loading) {
         return (
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-6 gap-y-10">
                 {Array.from({ length: skeletonCount }).map((_, i) => <SkeletonCard key={i} />)}
             </div>
         );
     }
 
     if (!animes || animes.length === 0) {
-        return <p className="text-center text-text/70 py-10">No anime found.</p>;
+        return <p className="text-center text-on-surface-variant py-16">No anime found.</p>;
     }
 
     const getCardProps = (anime: AnyAnime) => {
@@ -48,7 +48,7 @@ const AnimeGrid: React.FC<AnimeGridProps> = ({ animes, loading, skeletonCount = 
     };
 
     return (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-6 gap-y-10">
             {animes.map((anime) => (
                 <AnimeCard 
                     key={anime.slug}
